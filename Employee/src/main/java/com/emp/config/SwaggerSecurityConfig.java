@@ -11,13 +11,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerSecurityConfig {
 
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Employee API")
-                        .version("1.0")
-                        .description("API documentation for Employee Management System"))
+                        .title("Zindagi APIs")
+                        .version("1.4.0")
+                        .description("Employee Management System"))
                 .components(new Components()
                         .addSecuritySchemes("BearerAuth", new SecurityScheme()
                                 .type(SecurityScheme.Type.HTTP)

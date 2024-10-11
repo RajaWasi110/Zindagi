@@ -21,14 +21,14 @@ public class JwtUtil {
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 5)) //expiration time
+                .setExpiration(new Date(System.currentTimeMillis() + 900000)) //expiration time
                 .signWith(SECRET_KEY, SignatureAlgorithm.HS256)
                 .compact();
     }
 
     // Generate a token
     public String generateToken(String username) {
-        long expirationTime = 1000 * 60 * 15; // 15 min
+        long expirationTime = 900000; // 15 min
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuer("MyApp")
